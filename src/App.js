@@ -21,8 +21,8 @@ function App() {
   const fetchAllImages = async (url) => {
     setIsLoading(true);
     const response = await axios({ url });
-    images = response.data.data.children.map(({data}) => data);
-    console.log(images);
+    images = response.data.data.children.map(({ data }) => data);
+    // console.log(images);
     setAllImages(images);
     setIsLoading(false);
   };
