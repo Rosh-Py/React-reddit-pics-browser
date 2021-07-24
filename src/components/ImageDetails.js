@@ -15,19 +15,30 @@ function ImageDetails() {
   window.scrollTo(0, 0);
   const imageDetails = () => {
     let image;
-    console.log(pathName);
-    image = allImages.find((c) => c.title === pathName);
+    // console.log(pathName);
+    image = allImages.find((c) => c.id === pathName);
     if (image) {
       let {
-        title,name, url, author_fullname, score, upvote_ratio, content_categories
+        title,
+        name,
+        url,
+        author_fullname,
+        score,
+        upvote_ratio,
+        content_categories,
       } = image;
 
       setDetails({
-        title, name, url, author_fullname, score, upvote_ratio, content_categories
+        title,
+        name,
+        url,
+        author_fullname,
+        score,
+        upvote_ratio,
+        content_categories,
       });
     }
     // console.log("image", image);
-    
   };
 
   useEffect(imageDetails, [filteredImages, pathName, allImages]);
@@ -73,7 +84,9 @@ function ImageDetails() {
               <div className="main-2">
                 <div>
                   <span className="title">Categories: </span>
-                  <span className="text">{details.content_categories.toString()}</span>
+                  <span className="text">
+                    {details.content_categories.toString()}
+                  </span>
                 </div>
               </div>
             </div>
@@ -117,10 +130,7 @@ const Wrapper = styled.div`
   .image img {
     object-fit: auto;
   }
-  .icons-container{
-    display: flex;
-    flex-wrap: wrap;
-  }
+
   @media screen and (min-width: 768px) {
     display: grid;
     .main {

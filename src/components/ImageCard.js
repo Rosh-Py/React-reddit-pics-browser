@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function ImageCard({ title, thumbnail }) {
+function ImageCard({ title, thumbnail, id }) {
   return (
     <Wrapper>
-      <Link to={`/${title}`}>
+      <Link to={`/${id}`}>
         <div className="thumbnail-img">
           <img src={thumbnail} alt={title} />
         </div>

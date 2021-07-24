@@ -37,9 +37,14 @@ function Images() {
       </Filters>
       <Wrapper className="section-center">
         {filteredImages.map((image) => {
-          const { title, thumbnail } = image;
+          const { title, thumbnail, id } = image;
           return (
-            <ImageCard key={uuidv4()} title={title} thumbnail={thumbnail} />
+            <ImageCard
+              key={uuidv4()}
+              id={id}
+              title={title}
+              thumbnail={thumbnail}
+            />
           );
         })}
         <MdKeyboardArrowUp
@@ -72,7 +77,8 @@ const Wrapper = styled.div`
   }
   @media screen and (min-width: 768px) {
     .scroll-top {
-    font-size: 3rem;
+      font-size: 3rem;
+    }
   }
 `;
 
@@ -89,4 +95,5 @@ const Filters = styled.div`
     padding-right: 6.8rem;
   }
 `;
+
 export default Images;
