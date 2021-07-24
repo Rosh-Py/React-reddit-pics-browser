@@ -48,13 +48,7 @@ function ImageDetails() {
     return <Loading />;
   }
   return (
-    <div className="section-center">
-      <TopWrapper>
-        <span className="back-btn btn" onClick={history.goBack}>
-          <FaLongArrowAltLeft className="back-icon" />
-          <span>Back</span>
-        </span>
-      </TopWrapper>
+    <div className="section-center section">
       {details && (
         <Wrapper>
           <div className="image">
@@ -107,21 +101,6 @@ const Wrapper = styled.div`
   .text {
     font-size: 0.85rem;
   }
-  .btn {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
-    box-shadow: var(--dark-shadow);
-    border-radius: var(--radius);
-    background: var(--bgc-2);
-    transition: var(--transition);
-    :active {
-      opacity: 0.6;
-    }
-    :hover {
-      transform: scale(1.1);
-      color: var(--clr-text-1);
-    }
-  }
   .main {
     display: grid;
     row-gap: 2rem;
@@ -168,34 +147,4 @@ const Wrapper = styled.div`
   }
 `;
 
-const TopWrapper = styled.div`
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  cursor: pointer;
-
-  .btn {
-    padding: 0.5rem 1rem;
-    box-shadow: var(--dark-shadow);
-    border-radius: var(--radius);
-    background: var(--bgc-2);
-  }
-  .back-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 7.5rem;
-    padding: 0.5rem 2rem;
-    transition: var(--transition);
-    :active {
-      opacity: 0.6;
-    }
-    :hover {
-      transform: scale(1.1);
-    }
-  }
-  @media screen and (min-width: 768px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-`;
 export default ImageDetails;
